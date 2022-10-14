@@ -96,6 +96,8 @@ struct ContentView: View {
                 // loaded the start words into a string
                 let allWords = startWords.components(separatedBy: "\n")
                 rootWord = allWords.randomElement() ?? "silkworm"
+                score = 0
+                usedWords = [String]()        
                 return
             }
         }
