@@ -92,7 +92,7 @@ struct ContentView: View {
         var tempWord = rootWord
         
         for letter in word {
-            if let pos = rootWord.firstIndex(of: letter) {
+            if let pos = tempWord.firstIndex(of: letter) {
                 tempWord.remove(at: pos)
             } else {
                 return false
