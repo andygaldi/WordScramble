@@ -75,7 +75,7 @@ struct ContentView: View {
             // found the URL
             if let startWords = try? String(contentsOf: startWordsURL) {
                 // loaded the start words into a string
-                let allWords = startWords.components(separatedBy: "/n")
+                let allWords = startWords.components(separatedBy: "\n")
                 rootWord = allWords.randomElement() ?? "silkworm"
                 return
             }
