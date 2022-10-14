@@ -41,6 +41,9 @@ struct ContentView: View {
             } message: {
                 Text(errorString)
             }
+            .toolbar {
+                Button("Get different word", action: startGame)
+            }
         }
     }
     
