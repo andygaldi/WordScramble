@@ -16,6 +16,8 @@ struct ContentView: View {
     @State private var errorString = ""
     @State private var showingError = false
     
+    @State private var score = 0
+    
     var body: some View {
         NavigationView {
             List {
@@ -23,6 +25,8 @@ struct ContentView: View {
                     TextField("Enter your word", text: $newWord)
                         .autocapitalization(.none)
                 }
+                
+                Text("Score: \(score)")
                 
                 Section {
                     ForEach(usedWords, id: \.self) { word in
@@ -79,6 +83,8 @@ struct ContentView: View {
         withAnimation {
             usedWords.insert(answer, at: 0)
         }
+        
+        score += answer.count
         
         newWord = ""
     }
